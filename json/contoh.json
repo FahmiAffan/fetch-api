@@ -1,9 +1,14 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "asd",
-      "author": "dsasadfds"
+      "id": 2,
+      "title": "fahmi",
+      "author": "affan"
+    },
+    {
+      "title": "faisal",
+      "author": "affan",
+      "id": 3
     }
   ],
   "comments": [],
