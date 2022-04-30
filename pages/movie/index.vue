@@ -4,16 +4,25 @@
 
 <script>
 import axios from 'axios';
+// import vue from 'vue';
+
 export default {
-  data()
-  {
-    movies: []
+  name: "ThisMovies",
+  // data: () => ({
+  //   movies:[]
+  // }),
+  data() {
+    return{
+      movies:[]
+    }
   },
-  mounted(){
-    axios.get('http://localhost:3000/movie')
-    .then((response) => console.log(response.data))
-    .catch(err => console.log(err))
+  async mounted(){
+    const response = await axios.get('http://localhost:3000/movies')
+    this.movies = response.data
+    // .then((response) => response.data,this.movies)
     // .catch(err => console.log(err))
+
+    // .catch(err => console.log(err)) 
     // fetch('http://localhost:3000/movie')
     // .then(res => res.json)
     // .then(data => this.movie = data)
@@ -23,5 +32,4 @@ export default {
 </script>
 
 <style>
-
 </style>
