@@ -9,16 +9,14 @@ import axios from 'axios';
 export default {
   name: "ThisMovies",
   // data: () => ({
-  //   movies:[]
+    //   movies:[]
   // }),
   data() {
     return{
       movies:[]
     }
   },
-  async mounted(){
-    const response = await axios.get('http://localhost:3000/movies')
-    this.movies = response.data
+  // async mounted(){
     // .then((response) => response.data,this.movies)
     // .catch(err => console.log(err))
 
@@ -27,6 +25,17 @@ export default {
     // .then(res => res.json)
     // .then(data => this.movie = data)
     // .catch(err => console.log(err.massage))
+  // },
+  methods : {
+    getData(){
+      const response = await axios.get('http://localhost:3000/movies')
+      this.movies = response.data
+    },
+    postData(){
+      axios.post('http://localhost:3000/movies/register',{
+        
+      })
+    }
   }
 }
 </script>
