@@ -2,7 +2,8 @@
   "movies" : [
     {
       "id" : 1,
-      "title": "Moonknight"
+      "title": "Moonknight",
+      "author": "fahmi"
     }
   ]
 }

@@ -14,5 +14,22 @@
   "comments": [],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "movies": [
+    {
+      "id": 1,
+      "title": "Moonknight",
+      "author": "fahmisdsad"
+    },
+    {
+      "title": "asd",
+      "author": "dsa",
+      "id": 2
+    },
+    {
+      "title": "asd",
+      "author": "asd",
+      "id": 3
+    }
+  ]
 }
