@@ -19,17 +19,20 @@
     {
       "id": 1,
       "title": "Moonknight",
-      "author": "fahmisdsad"
+      "author": "fahmisdsad",
+      "img": "https://d1fdloi71mui9q.cloudfront.net/Qp59itkNRXKoXVt9zguK_6Dpd6ln7zAW63WN4"
     },
     {
       "title": "asd",
       "author": "dsa",
-      "id": 2
+      "id": 2,
+      "img": "https://d1fdloi71mui9q.cloudfront.net/Qp59itkNRXKoXVt9zguK_6Dpd6ln7zAW63WN4"
     },
     {
       "title": "asd",
       "author": "asd",
-      "id": 3
+      "id": 3,
+      "img": "https://d1fdloi71mui9q.cloudfront.net/Qp59itkNRXKoXVt9zguK_6Dpd6ln7zAW63WN4"
     }
   ]
 }

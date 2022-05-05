@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxt",
+    "start-all": "bash start.sh",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",

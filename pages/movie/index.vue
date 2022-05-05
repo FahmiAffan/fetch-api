@@ -1,6 +1,12 @@
 <template>
   <div>
     <h1>Movies</h1>
+    <v-text-field
+      v-model="filter.movie"
+      :counter="10"
+      label="Search Movie"
+      required
+    ></v-text-field>
     <!-- TAMBAH -->
     <v-dialog v-model="modal.dialogTambah" width="500" persistent>
       <template v-slot:activator="{ on, attrs }">
@@ -109,7 +115,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(item, i) in movies" :key="i">
+          <tr v-for="(item, i) in movieComputed" :key="i">
             <td>{{ item.title }}</td>
             <td>{{ item.author }}</td>
             <td>
@@ -124,12 +130,16 @@
         </tbody>
       </template>
     </v-simple-table>
-    <card-custom title="Web Development" des="Halo masse"></card-custom>
-    <card-custom
-      title="Android & IOS Development"
-      img="https://d1fdloi71mui9q.cloudfront.net/Qp59itkNRXKoXVt9zguK_6Dpd6ln7zAW63WN4"
-      des="Ingpo"
-    ></card-custom>
+    <v-row>
+      <v-col cols="4" v-for="(item, i) in movieComputed" :key="i">
+        <card-custom
+          :title="item.title"
+          :img="item.img"
+          des="Ingpo"
+        ></card-custom>
+      </v-col>
+    </v-row>
+    <!-- <card-custom title="Web Development" des="Halo masse"></card-custom> -->
   </div>
 </template>
 
@@ -141,6 +151,9 @@ import CardCustom from "./_card.vue";
 export default {
   name: "ThisMovies",
   data: () => ({
+    filter: {
+      movie: "",
+    },
     movies: [],
     modal: {
       dialogTambah: false,
@@ -169,6 +182,21 @@ export default {
   created() {
     // console.log('faisal');
     this.getData();
+  },
+  computed: {
+    movieComputed() {
+      if (this.filter.movie == "" || this.filter.movie == null) {
+        return this.movies;
+      } else {
+        let result = this.movies;
+        return result.filter((e) => {
+          return (
+            e.title.toLowerCase().includes(this.filter.movie.toLowerCase()) ||
+            e.author.toLowerCase().includes(this.filter.movie.toLowerCase())
+          );
+        });
+      }
+    },
   },
   methods: {
     getData() {
