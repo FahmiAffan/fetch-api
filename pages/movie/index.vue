@@ -41,6 +41,15 @@
                     required
                   ></v-text-field>
                 </v-col>
+                <v-col cols="12">
+                  <v-text-field
+                    v-model="modal.tambah.img"
+                    :counter="10"
+                    label="Image"
+                    required
+                  ></v-text-field>
+                </v-col>
+
               </v-row>
             </v-container>
           </v-form>
@@ -162,11 +171,13 @@ export default {
       tambah: {
         title: "",
         author: "",
+        img : ""
       },
       edit: {
         id: null,
         title: "",
         author: "",
+        img : ""
       },
     },
     rules: {
