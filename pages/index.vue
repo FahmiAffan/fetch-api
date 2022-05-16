@@ -64,7 +64,7 @@
                   <v-text-field
                     v-model="modal.edit.title"
                     :counter="10"
-                    label="TItle"
+                    label="Title"
                     required
                   ></v-text-field>
                 </v-col>

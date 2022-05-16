@@ -95,6 +95,14 @@
                     required
                   ></v-text-field>
                 </v-col>
+                <v-col cols="12">
+                  <v-text-field
+                    v-model="modal.edit.img"
+                    :counter="10"
+                    label="Image"
+                    required
+                  ></v-text-field>
+                </v-col>
               </v-row>
             </v-container>
           </v-form>
@@ -144,7 +152,11 @@
         <card-custom
           :title="item.title"
           :img="item.img"
+          :author="item.author"
+          :dataLengkap="item"
           des="Ingpo"
+          @klikUpdate="updateData"
+          @klikDelete="deleteData"
         ></card-custom>
       </v-col>
     </v-row>
@@ -214,7 +226,7 @@ export default {
       axios
         .get("http://localhost:3100/movies")
         .then((response) => {
-          this.movies = response.data;
+          this.movies = response.data; 
         })
         .catch((err) => {
           console.log(err);
@@ -259,6 +271,7 @@ export default {
               id: null,
               title: "",
               author: "",
+              img:""
             };
           });
       } else {
