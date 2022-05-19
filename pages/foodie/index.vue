@@ -1,22 +1,21 @@
 <template>
   <div>
     <h1>Hello world</h1>
+    <v-row>
+      <v-col cols="3" v-for="(item, i) in foodie" :key="i">
+        <cardie :title="item.title" :img ="item.img" :price="item.price"></cardie>
+      </v-col>
+    </v-row>
     <v-dialog v-model="dialog" width="500">
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
-          Click Me
-        </v-btn>
-      </template>
-
       <v-card>
         <v-form>
           <v-container>
-            <v-col cols="12" md="4">
+            <v-col cols="5" md="4">
               <v-row>
                 <v-text-field
                   v-model="posts.tambah.title"
                   :rules="nameRules"
-                  :counter="10"
+                  :counter="100"
                   label="title"
                   required
                 ></v-text-field>
@@ -25,16 +24,17 @@
                 <v-text-field
                   v-model="posts.tambah.img"
                   :rules="nameRules"
-                  :counter="10"
+                  :counter="10000"
                   label="img"
                   required
                 ></v-text-field>
               </v-row>
               <v-row>
                 <v-text-field
-                  v-model="posts.tambah.img"
-                  :counter="10"
-                  label="Image"
+                  v-model="posts.tambah.price"
+                  :rules="nameRules"
+                  :counter="90"
+                  label="price"
                   required
                 ></v-text-field>
               </v-row>
@@ -46,15 +46,15 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="primary" text @click="dialog = false"> Close </v-btn>
-          <v-btn color="primary" text @click="dialog = false"> Add</v-btn>
+          <v-btn color="primary" text @click="prosesTambah"> Add</v-btn>
         </v-card-actions>
       </v-card>
+      <template v-slot:activator="{ on, attrs }">
+        <v-btn color="blue lighten-4" dark v-bind="attrs" v-on="on" fab large elevation="3">
+          <v-icon large color = "blue">mdi-plus</v-icon>
+        </v-btn>
+      </template>
     </v-dialog>
-    <v-row>
-      <v-col cols="3" v-for="(item, i) in foodie" :key="i">
-        <cardie :title="item.title" :img="item.img"></cardie>
-      </v-col>
-    </v-row>
   </div>
 </template>
 
@@ -71,6 +71,7 @@ export default {
       tambah: {
         title: "",
         img: "",
+        price: "",
       },
     },
     dialog: false,
