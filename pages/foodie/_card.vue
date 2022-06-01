@@ -15,15 +15,17 @@
     <v-card-text>
       <v-row align="center" class="mx-0">
         <v-rating
-          :value="4.5"
+          :value="rating"
+          background-color="grey lighten-2"
+          length= "5"
           color="amber"
           dense
           half-increments
           readonly
-          size="14"
+          size="16"
         ></v-rating>
 
-        <div class="grey--text ms-4">4.5 (413)</div>
+        <div class="grey--text ms-4">{{rating}}</div>
       </v-row>
 
       <div class="my-4 text-subtitle-1">Rp.{{ price }}</div>
@@ -32,9 +34,7 @@
     <v-divider class="mx-4"></v-divider>
 
     <v-card-actions>
-      <v-btn color="deep-purple lighten-2" text @click="reserve">
-        Reserve
-      </v-btn>
+      <v-btn text color="red darken-1" @click="$emit('klikDelete', emitting)"> Delete </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -57,6 +57,8 @@ export default {
     title: "",
     img: "",
     price:"",
+    rating:"",
+    emitting:{}
   },
 };
 </script>

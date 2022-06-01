@@ -51,14 +51,30 @@
     {
       "id": "1",
       "title": "Burger",
-      "price" : "800000",
-      "img": "https://foto.kontan.co.id/s0VRkMh0kfKeu-aE5k836PeMRpg=/smart/2022/01/06/221687372p.jpg"
+      "price": "800000",
+      "img": "https://foto.kontan.co.id/s0VRkMh0kfKeu-aE5k836PeMRpg=/smart/2022/01/06/221687372p.jpg",
+      "rating": "5"
     },
     {
       "id": "2",
       "title": "Pizza",
-      "price" : "120000",
-      "img": "https://cdn1-production-images-kly.akamaized.net/v4npiHeTZX_sqRHZq0ynyJrjDyQ=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3184486/original/057993000_1595219338-pizza-slices-marble-chopping-board_23-2147926088.jpg"
+      "price": "120000",
+      "img": "https://cdn1-production-images-kly.akamaized.net/v4npiHeTZX_sqRHZq0ynyJrjDyQ=/640x360/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/3184486/original/057993000_1595219338-pizza-slices-marble-chopping-board_23-2147926088.jpg",
+      "rating": "4.5"
+    },
+    {
+      "title": "jajangmyeon",
+      "img": "https://i1.wp.com/resepkoki.id/wp-content/uploads/2020/12/Resep-Jajangmyeon.jpg?fit=1080%2C1440&ssl=1",
+      "price": "25000",
+      "id": "MvaHmBt",
+      "rating": "3.5"
+    },
+    {
+      "title": "mie ayam",
+      "img": "https://cdn1-production-images-kly.akamaized.net/nzM4xwihphmagoVn8qBQaPcKzHo=/0x0:6000x3382/1200x675/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/3524401/original/066199400_1627521905-2021-07-28.jpg",
+      "rating": "1",
+      "price": "8000",
+      "id": "J6Vzdi6"
     }
   ]
 }
