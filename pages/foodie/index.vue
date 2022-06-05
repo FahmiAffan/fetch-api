@@ -80,6 +80,7 @@
           :rating="item.rating"
           :emitting="item"
           @klikDelete="deleteData"
+          @klikUpdate="updateData"
         ></cardie>
       </v-col>
     </v-row>
@@ -208,6 +209,33 @@ export default {
           this.getData();
         });
     },
+    updateData(modal = false, data = null){
+      if (modal == false) {
+        let payload = this.modal.edit;
+        // alert(JSON.stringify(payload));
+        this.$axios
+          .put("http://localhost:3100/movies/" + payload.id, payload)
+          .then((res) => {
+            this.modal.dialogUpdate = false;
+            alert("Berhasil Update Data " + payload.id);
+            this.getData();
+            this.modal.edit = {
+              id: null,
+              title: "",
+              author: "",
+              img:""
+            };
+          });
+      } else {
+        // console.log(data);
+        this.modal.edit = {
+          id: data.id,
+          title: data.title,
+          author: data.author,
+        };
+        this.modal.dialogUpdate = true;
+      }
+    }
   },
 };
 </script>
